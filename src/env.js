@@ -1,4 +1,8 @@
 import { z } from "zod";
+import dotenv from "dotenv";
+
+// Load environment variables from .env file
+dotenv.config();
 
 const envSchema = z.object({
   ONE_DAY_ONE_STORY_NEXTAPP: z.string().url(),
@@ -7,10 +11,8 @@ const envSchema = z.object({
 });
 
 // Function to validate and export the env vars
-export function validateEnv() {
+function validateEnv() {
   return envSchema.parse(process.env);
 }
 
-const env = validateEnv();
-
-export const { CRON_SECRET, ONE_DAY_ONE_STORY_NEXTAPP, PORT } = env;
+export const env = validateEnv();

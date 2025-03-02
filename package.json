@@ -1,21 +1,21 @@
 {
   "name": "1d-1s-backend",
-  "module": "index.ts",
+  "module": "index.js",
   "type": "module",
   "devDependencies": {
-    "@types/axios": "^0.14.4",
     "@types/bun": "latest",
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.4"
   },
   "scripts": {
-    "start" :" bun run ./index.ts"
+    "start": " node ./index.js"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
   },
   "dependencies": {
     "axios": "^1.7.9",
+    "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "node-cron": "^3.0.3",
     "zod": "^3.24.2"
