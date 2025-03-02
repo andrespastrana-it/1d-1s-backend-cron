@@ -6,8 +6,8 @@ import cron from "node-cron";
 
 const app = express();
 
-// Cron job scheduled to run once daily at midnight (00:00)
-cron.schedule("0 0 * * *", async () => {
+// Cron job scheduled to run every hour (at minute 0)
+cron.schedule("0 * * * *", async () => {
   try {
     console.log(`Cron job triggered at ${new Date().toISOString()}`);
 
