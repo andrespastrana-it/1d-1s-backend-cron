@@ -1,7 +1,7 @@
 import express from "express";
 import axios from "axios";
 
-import { ONE_DAY_ONE_STORY_NEXTAPP, CRON_SECRET, PORT } from "./config/env";
+import { ONE_DAY_ONE_STORY_NEXTAPP, CRON_SECRET, PORT } from "./src/env";
 const cron = require("node-cron");
 
 const app = express();
@@ -21,7 +21,7 @@ cron.schedule("* * * * *", async () => {
     }
 
     
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error making request:", error.message);
   }
 });
